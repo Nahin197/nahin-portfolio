@@ -277,7 +277,7 @@ const PROJECTS = [
     period: 'May 2025',
     badge: 'Full-Stack · Champion',
     desc: '🏆 Champion at UIU CSE Project Show – Fall 2024. Group savings, DPS plans, AI financial advisor (LLaMA), democratic voting, bKash/Nagad payments, real-time chat, community forum.',
-    tags: ['PHP', 'MySQL', 'Python Flask', 'Tailwind CSS', 'JavaScript'],
+    tags: ['PHP', 'MySQL', 'Python Flask', 'Tailwind CSS', 'JavaScript', 'Node JS', 'Socket Programming for chat system', 'LLaMA'],
     github: 'https://github.com/Nahin197/Cholosave--System-Alanysis-Design-Course-Project',
   },
   {
@@ -307,7 +307,7 @@ const PROJECTS = [
     period: 'Mar 2025',
     badge: 'Desktop App',
     desc: '🥈 2nd Runner-Up at UIU CSE Project Show – Summer 2024. Full marketplace with live auctions, NFT trading, real-time chat (Java Sockets), multi-role system (Guest/Customer/Artist/Admin), MVC architecture.',
-    tags: ['Java', 'JavaFX', 'MySQL', 'JDBC', 'Maven', 'Multithreading'],
+    tags: ['Java', 'JavaFX', 'MySQL', 'JDBC', 'Maven', 'Multithreading', 'Socket Programming'],
     github: 'https://github.com/Nahin197/Virtual-Art-Gallery-AOOP-Course-project',
   },
 ];
