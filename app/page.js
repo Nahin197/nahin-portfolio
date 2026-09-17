@@ -466,7 +466,7 @@ function Navbar() {
   return (
     <nav className="navbar" style={scrolled ? { background: 'rgba(3,7,18,0.95)' } : {}} role="navigation" aria-label="Main navigation">
       <div className="container navbar-inner">
-        <a href="#hero" className="navbar-logo" id="nav-logo">Nahin.dev</a>
+        <a href="#hero" className="navbar-logo" id="nav-logo">Nahin</a>
         
         <div className="navbar-links">
           {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'].map((s) => (
