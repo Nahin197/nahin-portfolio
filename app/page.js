@@ -857,8 +857,22 @@ function Education() {
 ════════════════════════════════════════ */
 function Honors() {
   const awards = [
-    { emoji: '🏆', title: 'Champion', event: 'UIU CSE Project Show – Fall 2024', detail: 'System Analysis & Design (SAD Lab) · December 2024', evidence: 'https://drive.google.com/drive/folders/1M-7cGar7w_iZjZY-rodbQFIV7NQWFiKc?usp=drive_link' },
-    { emoji: '🥈', title: '2nd Runner-Up', event: 'UIU CSE Project Show – Summer 2024', detail: 'Advanced Object-Oriented Programming (AOOP) · October 2024', evidence: 'https://drive.google.com/drive/folders/1yR6fz0gbsrZO0wzXYtIkgDmCKXhGaJsC?usp=drive_link' },
+    { 
+      emoji: '🏆', 
+      title: 'Champion', 
+      event: 'UIU CSE Project Show – Fall 2024', 
+      detail: 'System Analysis & Design (SAD Lab) · December 2024', 
+      evidence: 'https://drive.google.com/drive/folders/1M-7cGar7w_iZjZY-rodbQFIV7NQWFiKc?usp=drive_link',
+      image: '/certificate_Champion.jpeg'
+    },
+    { 
+      emoji: '🥈', 
+      title: '2nd Runner-Up', 
+      event: 'UIU CSE Project Show – Summer 2024', 
+      detail: 'Advanced Object-Oriented Programming (AOOP) · October 2024', 
+      evidence: 'https://drive.google.com/drive/folders/1yR6fz0gbsrZO0wzXYtIkgDmCKXhGaJsC?usp=drive_link',
+      image: '/Certificate_2ndRunnersUp.jpeg'
+    },
   ];
   return (
     <section id="honors" className="section">
@@ -875,6 +889,23 @@ function Honors() {
               <div className="honor-title">{a.title}</div>
               <div className="honor-event">{a.event}</div>
               <div className="honor-detail">{a.detail}</div>
+              
+              {a.image && (
+                <div style={{ marginTop: '1rem', width: '100%' }}>
+                  <img 
+                    src={a.image} 
+                    alt={`${a.title} Certificate`} 
+                    style={{ 
+                      width: '100%', 
+                      height: 'auto', 
+                      borderRadius: '8px', 
+                      border: '1px solid var(--clr-border)',
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+                    }} 
+                  />
+                </div>
+              )}
+
               {a.evidence && (
                 <div style={{ marginTop: '1.25rem' }}>
                   <a href={a.evidence} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
