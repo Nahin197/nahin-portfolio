@@ -272,6 +272,24 @@ const PROJECTS = [
   /* ── Web Development ── */
   {
     category: 'web',
+    icon: '🚀',
+    title: 'CholoSave (Enhanced Version) — Advanced Collaborative Savings Platform',
+    period: 'Aug 2025',
+    badge: 'Full-Stack (Laravel)',
+    desc: 'Enhanced MVC implementation of CholoSave using Laravel and REST APIs. Features group savings with goals, loan requests with democratic voting, AI-powered investment suggestions, OTP verification for payments, and gamified performance tracking with leaderboards.',
+    tags: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'JavaScript'],
+  },
+  {
+    category: 'web',
+    icon: '🤝',
+    title: 'UniVol — University Volunteer Management System',
+    period: 'Dec 2023',
+    badge: 'Full-Stack DBMS',
+    desc: 'Full-stack platform connecting volunteers, clubs, and university authorities. Features event creation with approval workflows, a gamified points and badges system for volunteers, complaint/penalty management, and an admin dashboard with role-based access control.',
+    tags: ['PHP', 'MySQL', 'HTML5', 'Tailwind CSS', 'DaisyUI', 'JavaScript'],
+  },
+  {
+    category: 'web',
     icon: '🏆',
     title: 'CholoSave — Collaborative Group Savings Platform (Champion 🥇)',
     period: 'May 2025',
@@ -712,7 +730,7 @@ function Projects() {
           <span className="section-tag">Portfolio</span>
           <h2 className="section-title">Featured <span>Projects</span></h2>
           <p className="section-subtitle">
-            15 real-world projects spanning QA automation, ML research, and full-stack development.
+            17 real-world projects spanning QA automation, ML research, and full-stack development.
           </p>
           <div className="divider" />
         </div>
