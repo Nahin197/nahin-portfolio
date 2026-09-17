@@ -1112,6 +1112,34 @@ button {
   color: #fcd34d;
 }
 
+/* ─── Full-width "View Test Case Report" button at card bottom ─── */
+.report-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: #fcd34d;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.report-btn:hover {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: #f59e0b;
+  color: #fde68a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.2);
+}
+
 .project-meta {
   display: flex;
   align-items: center;

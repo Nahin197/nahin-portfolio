@@ -746,11 +746,6 @@ function Projects() {
                   {p.github && (
                     <a href={p.github} target="_blank" rel="noopener noreferrer" className="project-link-btn" aria-label={`GitHub repo for ${p.title}`}><IconGitHub /></a>
                   )}
-                  {p.report && (
-                    <a href={p.report} target="_blank" rel="noopener noreferrer" className="project-link-btn project-link-report" aria-label={`View report for ${p.title}`} title="View Report">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
-                    </a>
-                  )}
                   {p.github && (
                     <a href={p.github} target="_blank" rel="noopener noreferrer" className="project-link-btn" aria-label={`View ${p.title}`}><IconExternal /></a>
                   )}
@@ -765,6 +760,24 @@ function Projects() {
               <div className="project-tags">
                 {p.tags.map((t) => <span key={t} className="tech-tag">{t}</span>)}
               </div>
+              {p.report && (
+                <a
+                  href={p.report}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="report-btn"
+                  aria-label={`View test case report for ${p.title}`}
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="15" height="15" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <line x1="10" y1="9" x2="8" y2="9"/>
+                  </svg>
+                  View Test Case Report
+                </a>
+              )}
             </article>
           ))}
         </div>
