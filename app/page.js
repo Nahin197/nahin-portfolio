@@ -566,7 +566,7 @@ function About() {
               Jira, and k6. I have worked within SDLC, STLC, and Agile methodologies.
             </p>
             <p>
-              Beyond QA, I have a solid foundation in C++, Java, Python, PHP, and JavaScript —
+              Beyond QA, I have a solid foundation in C, C++, Java, Python, PHP, and JavaScript —
               enabling me to understand both frontend and backend systems during testing.
               Proud to be <strong style={{ color: 'var(--clr-violet-light)' }}>Champion</strong> at UIU CSE Project Show (SAD Lab) and{' '}
               <strong style={{ color: 'var(--clr-cyan)' }}>2nd Runner-Up</strong> in AOOP.
