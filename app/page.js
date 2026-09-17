@@ -673,13 +673,10 @@ function Experience() {
               </div>
               <div className="exp-company">Center for Development of IT Professionals (CDIP), UIU · Madani Avenue, Dhaka</div>
               <p className="exp-desc">
-                Professional QA training program covering end-to-end software testing life cycle.
-                Built real-world automation projects using Playwright, Postman, Newman, and
-                JavaScript. Applied SDLC, STLC, and Agile methodologies in practical settings.
-                Designed test plans, executed test suites, and reported defects with structured documentation.
+                Completed a professional QA training program covering the end-to-end Software Testing Life Cycle (STLC). Gained hands-on experience in manual, API, database, and performance testing while applying SDLC, STLC, and Agile methodologies in practical scenarios. Built real-world automation projects using Playwright, Selenium, Postman, Newman, JavaScript, and performed performance testing using k6. Practiced defect tracking with Jira, designed test plans, executed test cases and test suites, performed database validation using SQL, and documented test results and defects using structured QA practices.
               </p>
               <div className="skill-tags">
-                {['Playwright', 'Postman', 'Newman', 'Jira', 'STLC', 'Agile', 'API Testing'].map((t) => (
+                {['Playwright', 'Selenium', 'Postman', 'Newman', 'Jira', 'STLC', 'Agile', 'API Testing', 'Database Testing', 'K6', 'JavaScript', 'SQL', 'Manual Testing', 'Performance Testing'].map((t) => (
                   <span key={t} className="tech-tag">{t}</span>
                 ))}
               </div>
