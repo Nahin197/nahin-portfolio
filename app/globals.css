@@ -367,6 +367,61 @@ button {
   padding: 0.5rem 1.25rem;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--clr-text);
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: -0.5rem;
+  z-index: 101;
+}
+
+.hamburger-btn:hover {
+  color: var(--clr-cyan);
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(3, 7, 18, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 2rem;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--clr-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  text-align: center;
+  transition: color var(--transition-fast);
+}
+
+.mobile-link:hover {
+  color: var(--clr-text);
+}
+
 /* ──────────────────────────────────────────────
    HERO SECTION
 ────────────────────────────────────────────── */
@@ -1473,6 +1528,12 @@ button {
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
+  }
+  
+  .hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .about-stats {

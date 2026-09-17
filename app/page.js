@@ -455,6 +455,8 @@ function IconWhatsApp() {
 ════════════════════════════════════════ */
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll);
@@ -465,15 +467,56 @@ function Navbar() {
     <nav className="navbar" style={scrolled ? { background: 'rgba(3,7,18,0.95)' } : {}} role="navigation" aria-label="Main navigation">
       <div className="container navbar-inner">
         <a href="#hero" className="navbar-logo" id="nav-logo">Nahin.dev</a>
+        
         <div className="navbar-links">
           {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'].map((s) => (
             <a key={s} href={`#${s.toLowerCase()}`} className="navbar-link" id={`nav-${s.toLowerCase()}`}>{s}</a>
           ))}
         </div>
-        <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="btn btn-primary navbar-cta" id="nav-cv-btn">
-          <IconDownload /> Resume
-        </a>
+        
+        <div className="navbar-actions">
+          <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="btn btn-primary navbar-cta" id="nav-cv-btn">
+            <IconDownload /> Resume
+          </a>
+          
+          <button 
+            className="hamburger-btn" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+              {mobileMenuOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </>
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {mobileMenuOpen && (
+        <div className="mobile-menu">
+          {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'].map((s) => (
+            <a 
+              key={s} 
+              href={`#${s.toLowerCase()}`} 
+              className="mobile-link" 
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {s}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
