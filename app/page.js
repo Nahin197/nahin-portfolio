@@ -902,7 +902,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <p className="footer-text">© {new Date().getFullYear()} <span>Md. Khademul Islam Nahin</span>. Built with <span>Next.js</span> &amp; deployed on <span>Vercel</span>.</p>
+        <p className="footer-text">© {new Date().getFullYear()} <span>Md. Khademul Islam Nahin</span>.</p>
       </div>
     </footer>
   );
