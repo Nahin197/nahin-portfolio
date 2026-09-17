@@ -278,6 +278,7 @@ const PROJECTS = [
     badge: 'Full-Stack (Laravel)',
     desc: 'Enhanced MVC implementation of CholoSave using Laravel and REST APIs. Features group savings with goals, loan requests with democratic voting, AI-powered investment suggestions, OTP verification for payments, and gamified performance tracking with leaderboards.',
     tags: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'JavaScript'],
+    github: 'https://github.com/Nahin197/Cholosave-SWE-Course-Project',
   },
   {
     category: 'web',
@@ -287,6 +288,7 @@ const PROJECTS = [
     badge: 'Full-Stack DBMS',
     desc: 'Full-stack platform connecting volunteers, clubs, and university authorities. Features event creation with approval workflows, a gamified points and badges system for volunteers, complaint/penalty management, and an admin dashboard with role-based access control.',
     tags: ['PHP', 'MySQL', 'HTML5', 'Tailwind CSS', 'DaisyUI', 'JavaScript'],
+    github: 'https://github.com/Nahin197/Univol-DBMS-Project',
   },
   {
     category: 'web',
