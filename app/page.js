@@ -515,10 +515,6 @@ function Hero() {
         </div>
       </div>
 
-      <div className="hero-scroll" aria-hidden="true">
-        <div className="scroll-line" />
-        <span>scroll</span>
-      </div>
     </section>
   );
 }
