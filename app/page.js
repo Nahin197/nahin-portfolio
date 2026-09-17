@@ -8,9 +8,8 @@ import { useEffect, useRef, useState } from 'react';
 ════════════════════════════════════════ */
 
 const TYPED_STRINGS = [
-  'Jr. SQA Automation Engineer',
-  'Playwright & Postman Expert',
-  'API Testing Specialist',
+  'Aspiring Jr. SQA Automation Engineer',
+  'Problem Solver',
   'Full-Stack Web Developer',
   'CSE Graduate @ UIU',
 ];
