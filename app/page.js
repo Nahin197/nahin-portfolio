@@ -289,6 +289,7 @@ const PROJECTS = [
     desc: 'Full-stack platform connecting volunteers, clubs, and university authorities. Features event creation with approval workflows, a gamified points and badges system for volunteers, complaint/penalty management, and an admin dashboard with role-based access control.',
     tags: ['PHP', 'MySQL', 'HTML5', 'Tailwind CSS', 'DaisyUI', 'JavaScript'],
     github: 'https://github.com/Nahin197/Univol-DBMS-Project',
+    live: 'https://univol.site.je',
   },
   {
     category: 'web',
@@ -824,8 +825,8 @@ function Projects() {
                   {p.github && (
                     <a href={p.github} target="_blank" rel="noopener noreferrer" className="project-link-btn" aria-label={`GitHub repo for ${p.title}`}><IconGitHub /></a>
                   )}
-                  {p.github && (
-                    <a href={p.github} target="_blank" rel="noopener noreferrer" className="project-link-btn" aria-label={`View ${p.title}`}><IconExternal /></a>
+                  {p.live && (
+                    <a href={p.live} target="_blank" rel="noopener noreferrer" className="project-link-btn" aria-label={`Live site for ${p.title}`}><IconExternal /></a>
                   )}
                 </div>
               </div>
@@ -838,6 +839,22 @@ function Projects() {
               <div className="project-tags">
                 {p.tags.map((t) => <span key={t} className="tech-tag">{t}</span>)}
               </div>
+              {p.live && (
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="live-site-btn"
+                  aria-label={`Visit live site for ${p.title}`}
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="15" height="15" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                  </svg>
+                  🚀 Live Site
+                </a>
+              )}
               {p.report && (
                 <a
                   href={p.report}
