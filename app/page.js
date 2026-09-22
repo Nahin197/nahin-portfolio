@@ -574,7 +574,25 @@ function Experience() {
    PROJECTS
 ════════════════════════════════════════ */
 function Projects() {
-  const featuredProjects = PROJECTS.filter((p) => p.category === 'sqa').slice(0, 3);
+  const [activeTab, setActiveTab] = useState('sqa');
+  const [expanded, setExpanded] = useState(false);
+
+  const filtered = PROJECTS.filter((p) => p.category === activeTab);
+  const displayed = expanded ? filtered : filtered.slice(0, 3);
+
+  const counts = {
+    sqa: PROJECTS.filter((p) => p.category === 'sqa').length,
+    ml:  PROJECTS.filter((p) => p.category === 'ml').length,
+    web: PROJECTS.filter((p) => p.category === 'web').length,
+  };
+
+  const activeMeta = CATEGORIES.find((c) => c.id === activeTab);
+
+  // Reset expanded state when changing tabs
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    setExpanded(false);
+  };
 
   return (
     <section id="projects" className="section">
@@ -583,13 +601,38 @@ function Projects() {
           <span className="section-tag">Portfolio</span>
           <h2 className="section-title">Featured <span>Projects</span></h2>
           <p className="section-subtitle">
-            A selection of my best QA automation work.
+            17 real-world projects spanning QA automation, ML research, and full-stack development.
           </p>
           <div className="divider" />
         </div>
 
-        <div className="projects-grid">
-          {featuredProjects.map((p, i) => (
+        {/* Category Tabs */}
+        <div className="project-tabs reveal" role="tablist" aria-label="Project categories">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              id={`tab-${cat.id}`}
+              role="tab"
+              aria-selected={activeTab === cat.id}
+              className={`project-tab${activeTab === cat.id ? ' project-tab-active' : ''}`}
+              onClick={() => handleTabChange(cat.id)}
+            >
+              <span className="project-tab-emoji" aria-hidden="true">{cat.emoji}</span>
+              {cat.label}
+              <span className="project-tab-count">{counts[cat.id]}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Active category label */}
+        <div className="category-divider-line" style={{ marginBottom: '1.75rem' }}>
+          <span className="category-divider-label">
+            {activeMeta?.emoji} {activeMeta?.label}
+          </span>
+        </div>
+
+        <div key={activeTab} className="projects-grid" role="tabpanel">
+          {displayed.map((p, i) => (
             <article
               key={p.title}
               className="glass-card project-card project-card-animated"
@@ -654,11 +697,13 @@ function Projects() {
           ))}
         </div>
 
-        <div className="view-all-projects-container reveal" style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <Link href="/projects" className="hero-btn primary-btn">
-            View All Projects ({PROJECTS.length})
-          </Link>
-        </div>
+        {!expanded && filtered.length > 3 && (
+          <div className="view-all-projects-container reveal" style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <button onClick={() => setExpanded(true)} className="hero-btn primary-btn" style={{ cursor: 'pointer', fontFamily: 'inherit', border: 'none' }}>
+              View More {activeMeta?.label} Projects
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
