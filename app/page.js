@@ -698,7 +698,7 @@ function Projects() {
 
         {!expanded && filtered.length > 3 && (
           <div className="view-all-projects-container" style={{ textAlign: 'center', marginTop: '3rem', animation: 'fadeIn 0.5s ease-out' }}>
-            <button onClick={() => setExpanded(true)} className="hero-btn primary-btn" style={{ cursor: 'pointer', fontFamily: 'inherit', border: 'none' }}>
+            <button onClick={() => setExpanded(true)} className="btn btn-primary" style={{ cursor: 'pointer', fontFamily: 'inherit' }}>
               View More {activeMeta?.label} Projects
             </button>
           </div>
