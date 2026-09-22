@@ -1,7 +1,9 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { PROJECTS } from './data/projects';
 
 /* ════════════════════════════════════════
    DATA
@@ -145,191 +147,6 @@ const SKILLS = [
       { name: 'VS Code', color: '#007acc' },
       { name: 'IntelliJ IDEA', color: '#fe2d55' },
     ],
-  },
-];
-
-const CATEGORIES = [
-  { id: 'sqa', label: 'SQA & Testing', emoji: '🧪' },
-  { id: 'ml', label: 'Machine Learning', emoji: '🤖' },
-  { id: 'web', label: 'Web Development', emoji: '🌐' },
-];
-
-const PROJECTS = [
-  /* ── SQA ── */
-  {
-    category: 'sqa',
-    icon: '🎪',
-    title: 'EverShop E-Commerce — E2E UI Automation with Playwright',
-    period: 'Sep 2026',
-    badge: 'E2E UI Automation',
-    desc: 'Professional E2E UI automation suite for EverShop using Playwright & a two-layer POM (Objects.js + Actions.js). Automates Registration, Login, Logout, Product Search, and Add-to-Cart. Allure reports with screenshot/video on failure, ordered project dependencies, cross-browser testing',
-    tags: ['Playwright', 'JavaScript ES6+', 'Allure', 'Node.js', 'POM'],
-    github: 'https://github.com/Nahin197/demoEvershop-automation-testing',
-  },
-  {
-    category: 'sqa',
-    icon: '🛒',
-    title: 'E-Commerce API Automation Testing — EverShop',
-    period: 'Oct 2026',
-    badge: 'API Automation',
-    desc: 'End-to-end API automation for EverShop: Product Search → View Cart → Add to Cart → Verify Cart → Delete Item → Bulk Cleanup. 6 chained requests (GET/POST/DELETE), 13 assertions, Math.random() dynamic data, arithmetic assertion (pre_qty + added_qty = post_qty), try/catch for empty cart, pm.sendRequest bulk loop.',
-    tags: ['Postman', 'Newman', 'JavaScript ES6', 'REST API', 'HTMLExtra', 'POM'],
-    github: 'https://github.com/Nahin197/demoEverShop-api-automation-testing',
-  },
-  {
-    category: 'sqa',
-    icon: '🎭',
-    title: 'CartUp E-Commerce E2E Automation Framework',
-    period: 'Sep 2026',
-    badge: 'E2E Automation',
-    desc: 'Professional E2E framework for CartUp (cartup.com) using Playwright & POM. Automates full shopping flow: Login → Search → Product Selection → Add to Cart → Checkout. 5 page classes, cross-browser (Chromium/Firefox/WebKit), test.step(), screenshot-on-failure, trace collection, auto-retry',
-    tags: ['Playwright', 'Node.js', 'JavaScript', 'POM', 'HTML Reporter'],
-    github: 'https://github.com/Nahin197/cartup-ecommerce-automation-testing',
-  },
-  {
-    category: 'sqa',
-    icon: '🍊',
-    title: 'OrangeHRM E2E Automation with Playwright & POM',
-    period: 'Aug 2026',
-    badge: 'E2E Automation',
-    desc: '10-step employee lifecycle: Admin login → PIM navigation → Add Employee → Save → Logout → New employee login → Name verification → Logout. 4 page classes (LoginPage, DashboardPage, PimPage, AddEmployeePage), reusable randomData.js, cross-browser testing, built-in HTML reporter.',
-    tags: ['Playwright', 'JavaScript ES Modules', 'Node.js', 'POM'],
-    github: 'https://github.com/Nahin197/orangehrm-automation-testing',
-  },
-  {
-    category: 'sqa',
-    icon: '👟',
-    title: 'Manual & API Testing — Shoe-Selling E-Commerce (EverShop)',
-    period: 'Jul 2026',
-    badge: 'Manual + API',
-    desc: '10 client requirement questions, 25 manual test cases, 22 executed (77.27% pass rate), 4 detailed bug reports. Full Happy Path: Search → Product Selection → Add to Cart (3 variants) → Cart Verification ($255). Bugs: SKU search, autocomplete, typo tolerance, search history. 9 Postman requests (GET/POST/PATCH/DELETE).',
-    tags: ['Postman', 'Manual Testing', 'Bug Reporting', 'API Testing'],
-    github: 'https://github.com/Nahin197/Shoe-Selling-E-Commerce-Platform-Manual-API-Testing-Assessment',
-  },
-  {
-    category: 'sqa',
-    icon: '🏆',
-    title: 'Mock Competitive Programming API — System Testing & Bug Discovery',
-    period: 'Oct 2025',
-    badge: 'System Testing',
-    desc: 'Comprehensive system testing on a mock CP REST API (Node.js + Express) covering JWT auth, contests, problems, submissions, and leaderboard. Test plan for 20+ endpoints with input/output partitioning, boundary analysis, happy path, auth/role checks, time-based logic & data consistency. Bugs reported with Blocker/Major/Minor severity.',
-    tags: ['Postman', 'JWT', 'Node.js', 'Express', 'REST API Testing'],
-    github: 'https://github.com/Nahin197/Mock-Competitive-Programming-API-Testing-by-Postman',
-    report: 'https://drive.google.com/file/d/1_cP1kfBv4zMsr9i53_1B8Uw-U2X-TKCi/view?usp=drive_link',
-  },
-  {
-    category: 'sqa',
-    icon: '🅿️',
-    title: 'Parking Slot Booking System — Unit Testing & QA (JUnit 5)',
-    period: 'Oct 2025',
-    badge: 'Unit Testing',
-    desc: 'JUnit 5 unit tests for all core modules: Wallet, Vehicle, ParkingSlot, Booking, ParkingSystem. Identified 6+ intentional defects: missing null validations, negative value acceptance, MICROCAR pricing bug, illegal booking state transitions. Documented expected vs. actual behavior, analyzed pricing models, booking lifecycle (ACTIVE→COMPLETED/CANCELLED), and time-window overlap detection.',
-    tags: ['Java 17', 'JUnit 5', 'IntelliJ IDEA', 'Git & GitHub', 'SQA'],
-    github: 'https://github.com/Nahin197/SQA-unit-Testing-Assignment-Solving',
-    report: 'https://drive.google.com/file/d/1LfmjJBQvHKTpEdjYXu3LhkV48UNMIoaO/view?usp=drive_link',
-  },
-  /* ── Machine Learning ── */
-  {
-    category: 'ml',
-    icon: '🛸',
-    title: 'Benchmarking Small-Object Detection on Aerial Imagery (VisDrone)',
-    period: 'Jun 2026',
-    badge: 'ML Research',
-    desc: 'Systematic benchmarking of 6 detection architectures (GOLD-YOLO, DAMO-YOLO, NanoDet-Plus, D-FINE, YOLOv12n, RF-DETR) on VisDrone2019-DET. SAHI sliced inference, IEEE paper.',
-    tags: ['Python', 'YOLO', 'SAHI', 'PyTorch', 'IEEE Paper'],
-    github: 'https://github.com/Nahin197/small-object-detection-visdrone-benchmark',
-  },
-  {
-    category: 'ml',
-    icon: '🏥',
-    title: 'Medical Data Mining — Dimensionality Reduction & Clustering',
-    period: 'Jan 2026',
-    badge: 'ML / Data Mining',
-    desc: 'Unsupervised ML pipeline on 4 medical datasets (Diabetes, Heart Disease, Hepatitis, CKD). Benchmarks PCA/t-SNE/UMAP × K-Means/DBSCAN/HDBSCAN. Cluster labels as features for XGBoost/RF with 5-Fold CV.',
-    tags: ['Python', 'Scikit-learn', 'UMAP', 'HDBSCAN', 'XGBoost'],
-    github: 'https://github.com/Nahin197/Medical-Data-Mining-Dimensionality-Reduction-Clustering-Analysis',
-  },
-  {
-    category: 'ml',
-    icon: '⚡',
-    title: 'Energy-Accuracy Trade-offs of Small Language Models',
-    period: 'Nov 2025',
-    badge: 'Green AI Research',
-    desc: 'Empirical benchmarking of 17 SLMs (270M–7B params). Used CodeCarbon for CO₂ measurement. Found 18× energy reduction choosing Qwen2.5-0.5B over Mistral-7B with only ~10% accuracy trade-off.',
-    tags: ['Python', 'HuggingFace', 'CodeCarbon', 'Google Colab', 'LaTeX'],
-    github: 'https://github.com/Nahin197/A-Deep-Dive-into-the-Energy-Accuracy-Trade-offs-of-Small-Language-Models-Green-Computing',
-  },
-  {
-    category: 'ml',
-    icon: '🗣️',
-    title: 'Bangla Dialect Normalization Using Transformer Models',
-    period: 'Nov 2025',
-    badge: 'NLP Research',
-    desc: '18,920 aligned sentence pairs across 5 Bangla dialects. Fine-tuned BanglaT5, NLLB-200, mBART-50, Small100. BanglaT5 achieved best avg BLEU of 56.04, peaking at 77.53 for Mymensingh.',
-    tags: ['Python', 'HuggingFace', 'PyTorch', 'SacreBLEU', 'NLP'],
-    github: 'https://github.com/Nahin197/bangla-dialect-normalization-Machine-Learning',
-  },
-  /* ── Web Development ── */
-  {
-    category: 'web',
-    icon: '🚀',
-    title: 'CholoSave (Enhanced Version) — Advanced Collaborative Savings Platform',
-    period: 'Aug 2025',
-    badge: 'Full-Stack (Laravel)',
-    desc: 'Enhanced MVC implementation of CholoSave using Laravel and REST APIs. Features group savings with goals, loan requests with democratic voting, AI-powered investment suggestions, OTP verification for payments, and gamified performance tracking with leaderboards.',
-    tags: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'JavaScript'],
-    github: 'https://github.com/Nahin197/Cholosave-SWE-Course-Project',
-  },
-  {
-    category: 'web',
-    icon: '🤝',
-    title: 'UniVol — University Volunteer Management System',
-    period: 'Dec 2023',
-    badge: 'Full-Stack DBMS',
-    desc: 'Full-stack platform connecting volunteers, clubs, and university authorities. Features event creation with approval workflows, a gamified points and badges system for volunteers, complaint/penalty management, and an admin dashboard with role-based access control.',
-    tags: ['PHP', 'MySQL', 'HTML5', 'Tailwind CSS', 'DaisyUI', 'JavaScript'],
-    github: 'https://github.com/Nahin197/Univol-DBMS-Project',
-    live: 'https://univol.site.je',
-  },
-  {
-    category: 'web',
-    icon: '🏆',
-    title: 'CholoSave — Collaborative Group Savings Platform (Champion 🥇)',
-    period: 'May 2025',
-    badge: 'Full-Stack · Champion',
-    desc: '🏆 Champion at UIU CSE Project Show – Fall 2024. Group savings, DPS plans, AI financial advisor (LLaMA), democratic voting, bKash/Nagad payments, real-time chat, community forum.',
-    tags: ['PHP', 'MySQL', 'Python Flask', 'Tailwind CSS', 'JavaScript', 'Node JS', 'Socket Programming for chat system', 'LLaMA'],
-    github: 'https://github.com/Nahin197/Cholosave--System-Alanysis-Design-Course-Project',
-  },
-  {
-    category: 'web',
-    icon: '💸',
-    title: 'CrediFlow — P2P Lending & Crowdfunding Platform',
-    period: 'Nov 2025',
-    badge: 'Full-Stack',
-    desc: 'Full-stack P2P lending platform connecting borrowers and lenders. Digital wallet, crowdfunding campaigns, role-based dashboards, Google OAuth (Firebase), real-time notifications, payment gateway concepts.',
-    tags: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3', 'Firebase'],
-    github: 'https://github.com/Nahin197/Crediflow-Web-Programming-Course-Project',
-  },
-  {
-    category: 'web',
-    icon: '🔐',
-    title: 'Security Implementation on CholoSave',
-    period: 'Nov 2025',
-    badge: 'Security',
-    desc: 'Multi-layered security model: Argon2id hashing, 2FA (OTP via email), SQL Injection prevention (prepared statements), XSS/CSRF protection, RBAC, CAPTCHA, rate limiting, security audit logging.',
-    tags: ['PHP', 'MySQL', 'Tailwind CSS', 'Argon2id', '2FA', 'RBAC'],
-    github: 'https://github.com/Nahin197/CholoSave-Security-Implementaion-CS-Course-',
-  },
-  {
-    category: 'web',
-    icon: '🎨',
-    title: 'Virtual Art Gallery — JavaFX Art Marketplace (2nd Runner-Up 🥈)',
-    period: 'Mar 2025',
-    badge: 'Desktop App',
-    desc: '🥈 2nd Runner-Up at UIU CSE Project Show – Summer 2024. Full marketplace with live auctions, NFT trading, real-time chat (Java Sockets), multi-role system (Guest/Customer/Artist/Admin), MVC architecture.',
-    tags: ['Java', 'JavaFX', 'MySQL', 'JDBC', 'Maven', 'Multithreading', 'Socket Programming'],
-    github: 'https://github.com/Nahin197/Virtual-Art-Gallery-AOOP-Course-project',
   },
 ];
 
@@ -757,17 +574,7 @@ function Experience() {
    PROJECTS
 ════════════════════════════════════════ */
 function Projects() {
-  const [activeTab, setActiveTab] = useState('sqa');
-
-  const filtered = PROJECTS.filter((p) => p.category === activeTab);
-
-  const counts = {
-    sqa: PROJECTS.filter((p) => p.category === 'sqa').length,
-    ml:  PROJECTS.filter((p) => p.category === 'ml').length,
-    web: PROJECTS.filter((p) => p.category === 'web').length,
-  };
-
-  const activeMeta = CATEGORIES.find((c) => c.id === activeTab);
+  const featuredProjects = PROJECTS.filter((p) => p.category === 'sqa').slice(0, 3);
 
   return (
     <section id="projects" className="section">
@@ -776,43 +583,13 @@ function Projects() {
           <span className="section-tag">Portfolio</span>
           <h2 className="section-title">Featured <span>Projects</span></h2>
           <p className="section-subtitle">
-            17 real-world projects spanning QA automation, ML research, and full-stack development.
+            A selection of my best QA automation work.
           </p>
           <div className="divider" />
         </div>
 
-        {/* Category Tabs */}
-        <div className="project-tabs reveal" role="tablist" aria-label="Project categories">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              id={`tab-${cat.id}`}
-              role="tab"
-              aria-selected={activeTab === cat.id}
-              className={`project-tab${activeTab === cat.id ? ' project-tab-active' : ''}`}
-              onClick={() => setActiveTab(cat.id)}
-            >
-              <span className="project-tab-emoji" aria-hidden="true">{cat.emoji}</span>
-              {cat.label}
-              <span className="project-tab-count">{counts[cat.id]}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* Active category label */}
-        <div className="category-divider-line" style={{ marginBottom: '1.75rem' }}>
-          <span className="category-divider-label">
-            {activeMeta?.emoji} {activeMeta?.label}
-          </span>
-        </div>
-
-        {/*
-          key={activeTab} forces React to fully remount the grid on every tab
-          switch — this replays the CSS card-enter animation for all new cards
-          without needing IntersectionObserver (which fires only once).
-        */}
-        <div key={activeTab} className="projects-grid" role="tabpanel">
-          {filtered.map((p, i) => (
+        <div className="projects-grid">
+          {featuredProjects.map((p, i) => (
             <article
               key={p.title}
               className="glass-card project-card project-card-animated"
@@ -875,6 +652,12 @@ function Projects() {
               )}
             </article>
           ))}
+        </div>
+
+        <div className="view-all-projects-container reveal" style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <Link href="/projects" className="hero-btn primary-btn">
+            View All Projects ({PROJECTS.length})
+          </Link>
         </div>
       </div>
     </section>
