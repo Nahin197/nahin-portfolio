@@ -8,6 +8,17 @@ export const PROJECTS = [
   /* ── SQA ── */
   {
     category: 'sqa',
+    icon: '🛍️',
+    title: 'SauceDemo E2E Automation Testing Suite — Playwright + JavaScript',
+    period: 'Sep 2026',
+    badge: 'E2E Automation',
+    desc: 'Professional E2E automation framework for SauceDemo e-commerce. Validates login error handling (locked-out user), automates a complete shopping journey (login, cart, checkout, price verification, order confirmation), and tests dynamic product filtering (Z→A sort) with a performance-degraded user. Dynamic price calculation assertions (subtotal, tax, grand total), Allure & HTML report auto-generation, and supports individual, sequential & parallel test execution.',
+    tags: ['Playwright', 'JavaScript ES6+', 'Node.js', 'POM', 'Allure', 'HTML Reporter'],
+    github: 'https://github.com/Nahin197/saucedemo-automation-',
+    video: 'https://drive.google.com/file/d/1puzDmvpXpNGmL6uKYlp-QQ5gm_21gTtd/view?usp=drive_link',
+  },
+  {
+    category: 'sqa',
     icon: '🎪',
     title: 'EverShop E-Commerce — E2E UI Automation with Playwright',
     period: 'Sep 2026',
