@@ -1195,6 +1195,59 @@ button {
   box-shadow: 0 4px 16px rgba(245, 158, 11, 0.2);
 }
 
+/* ─── Test Reports / Bug Screenshots button pair ─── */
+.project-action-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.test-reports-btn,
+.bug-screenshots-btn {
+  flex: 1 1 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.test-reports-btn {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.test-reports-btn:hover {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: #10b981;
+  color: #a7f3d0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);
+}
+
+.bug-screenshots-btn {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+}
+
+.bug-screenshots-btn:hover {
+  background: rgba(239, 68, 68, 0.18);
+  border-color: #ef4444;
+  color: #fecaca;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.2);
+}
+
 .live-site-btn {
   display: flex;
   align-items: center;

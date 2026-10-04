@@ -63,9 +63,11 @@ export const PROJECTS = [
     title: 'Manual & API Testing — Shoe-Selling E-Commerce (EverShop)',
     period: 'Jul 2026',
     badge: 'Manual + API',
-    desc: '10 client requirement questions, 25 manual test cases, 22 executed (77.27% pass rate), 4 detailed bug reports. Full Happy Path: Search → Product Selection → Add to Cart (3 variants) → Cart Verification ($255). Bugs: SKU search, autocomplete, typo tolerance, search history. 9 Postman requests (GET/POST/PATCH/DELETE).',
-    tags: ['Postman', 'Manual Testing', 'Bug Reporting', 'API Testing'],
+    desc: 'Manual & API testing of the dynamic Search feature on EverShop: 10 prioritized client requirement questions, 25 manual test cases, 22 executed (17 passed, 4 failed — 77.27% pass rate) and 4 detailed bug reports (SKU search, autocomplete, typo tolerance, search history). Full Happy Path: Search "Nike React" → Add 3 variants to cart → Verify $255.00 total. 9 Postman requests (GET/POST/PATCH/DELETE).',
+    tags: ['Postman', 'Manual Testing', 'Test Cases', 'Bug Reporting', 'API Testing'],
     github: 'https://github.com/Nahin197/Shoe-Selling-E-Commerce-Platform-Manual-API-Testing-Assessment',
+    testReports: 'https://drive.google.com/drive/folders/1c1IWsf686nbQij8ujdmJyYAZjM0zjXyq?usp=drive_link',
+    bugScreenshots: 'https://drive.google.com/drive/folders/1ewA0caJgmWZftsI_YE4kp30zObepnadR?usp=drive_link',
   },
   {
     category: 'sqa',

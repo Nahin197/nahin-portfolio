@@ -707,6 +707,42 @@ function Projects() {
                   View Test Case Report
                 </a>
               )}
+              {(p.testReports || p.bugScreenshots) && (
+                <div className="project-action-row">
+                  {p.testReports && (
+                    <a
+                      href={p.testReports}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="test-reports-btn"
+                      aria-label={`Test reports for ${p.title}`}
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="15" height="15" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <polyline points="9 15 11 17 15 13"/>
+                      </svg>
+                      Test Reports
+                    </a>
+                  )}
+                  {p.bugScreenshots && (
+                    <a
+                      href={p.bugScreenshots}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bug-screenshots-btn"
+                      aria-label={`Bug screenshots for ${p.title}`}
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="15" height="15" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                      </svg>
+                      Bug Screenshots
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>
