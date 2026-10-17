@@ -94,6 +94,16 @@ export const PROJECTS = [
   /* ── Machine Learning ── */
   {
     category: 'ml',
+    icon: '🧬',
+    title: 'Cell Type Annotation in Spatial Proteomics Using a Heterogeneous Gradient-Boosted Ensemble',
+    period: 'Jul 2026',
+    badge: '🎓 Thesis (FYDP)',
+    desc: 'Final Year Design Project @ United International University. Benchmarked 10 ML/DL architectures (MLPs, GNNs, FT-Transformer, LightGBM, XGBoost, CatBoost, GraphSAGE, GATv2) for automated cell type annotation in CODEX & MIBI spatial proteomics imaging. Designed a novel Heterogeneous Grid Search Ensemble (MLP + LightGBM + XGBoost + CatBoost) achieving 90.24% weighted F1 across 3 independent cancer datasets — cHL_CODEX (143K+ cells, 16 classes), CRC_CODEX, and cHL_MIBI — outperforming the published MAPS baseline by ~4%.',
+    tags: ['Python', 'PyTorch', 'Scikit-learn', 'LightGBM', 'XGBoost', 'CatBoost', 'GraphSAGE', 'GATv2', 'Spatial Proteomics', 'Bioinformatics'],
+    github: 'https://github.com/Nahin197/MAPS-update',
+  },
+  {
+    category: 'ml',
     icon: '🛸',
     title: 'Benchmarking Small-Object Detection on Aerial Imagery (VisDrone)',
     period: 'Jun 2026',
