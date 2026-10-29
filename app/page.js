@@ -549,7 +549,7 @@ function Experience() {
             <div className="glass-card exp-card reveal">
               <div className="exp-header">
                 <div className="exp-role">QA / STQA Trainee</div>
-                <span className="exp-period">May 2026 – Present</span>
+                <span className="exp-period">May 2026 – Sep 2026</span>
               </div>
               <div className="exp-company">Center for Development of IT Professionals (CDIP), UIU · Madani Avenue, Dhaka</div>
               <p className="exp-desc">
