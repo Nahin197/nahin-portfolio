@@ -286,7 +286,7 @@ function Navbar() {
         <a href="#hero" className="navbar-logo" id="nav-logo">Nahin</a>
         
         <div className="navbar-links">
-          {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'].map((s) => (
+          {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Certifications', 'Contact'].map((s) => (
             <a key={s} href={`#${s.toLowerCase()}`} className="navbar-link" id={`nav-${s.toLowerCase()}`}>{s}</a>
           ))}
         </div>
@@ -322,7 +322,7 @@ function Navbar() {
 
       {mobileMenuOpen && (
         <div className="mobile-menu">
-          {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'].map((s) => (
+          {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Certifications', 'Contact'].map((s) => (
             <a 
               key={s} 
               href={`#${s.toLowerCase()}`} 
@@ -796,61 +796,83 @@ function Education() {
 function Honors() {
   const awards = [
     { 
+      emoji: '📜', 
+      title: 'Software Testing & Quality Assurance (STQA)', 
+      event: 'CDIP – Center for Development of IT Professionals, UIU', 
+      detail: 'Certificate of Completion (32 Hours). Completed professional training program covering SDLC, STLC, Agile, Manual Testing, API Testing (Postman/Newman), Web Automation (Playwright/Selenium), and Database Validation. Issued: 08-07-2026 · ID: 911261005.', 
+      evidence: '/CDIP-Certificate.jpeg',
+      evidenceText: 'View Certificate',
+      verify: 'https://cdip.uiu.ac.bd/verify',
+      image: '/CDIP-Certificate.jpeg'
+    },
+    { 
       emoji: '🏆', 
       title: 'Champion', 
       event: 'UIU CSE Project Show – Fall 2024', 
-      detail: 'System Analysis & Design (SAD Lab) · December 2024', 
+      detail: 'System Analysis & Design (SAD Lab) · December 2024. Champion for CholoSave collaborative group savings platform.', 
       evidence: 'https://drive.google.com/drive/folders/1M-7cGar7w_iZjZY-rodbQFIV7NQWFiKc?usp=drive_link',
+      evidenceText: 'View Evidence',
       image: '/certificate_Champion.jpeg'
     },
     { 
       emoji: '🥈', 
       title: '2nd Runner-Up', 
       event: 'UIU CSE Project Show – Summer 2024', 
-      detail: 'Advanced Object-Oriented Programming (AOOP) · October 2024', 
+      detail: 'Advanced Object-Oriented Programming (AOOP) · October 2024. 2nd Runner-Up for Virtual Art Gallery desktop marketplace.', 
       evidence: 'https://drive.google.com/drive/folders/1yR6fz0gbsrZO0wzXYtIkgDmCKXhGaJsC?usp=drive_link',
+      evidenceText: 'View Evidence',
       image: '/Certificate_2ndRunnersUp.jpeg'
     },
   ];
   return (
-    <section id="honors" className="section">
+    <section id="certifications" className="section">
+      <div id="honors" style={{ position: 'relative', top: '-80px' }} />
       <div className="container">
         <div className="section-header reveal">
-          <span className="section-tag">Recognition</span>
-          <h2 className="section-title">Honors &amp; <span>Awards</span></h2>
+          <span className="section-tag">Credentials &amp; Recognition</span>
+          <h2 className="section-title">Certifications &amp; <span>Honors</span></h2>
           <div className="divider" />
         </div>
         <div className="honors-grid">
           {awards.map((a, i) => (
             <div key={a.title} className={`glass-card honor-card reveal reveal-delay-${i + 1}`} id={`honor-${i}`}>
               <div className="honor-emoji">{a.emoji}</div>
-              <div className="honor-title">{a.title}</div>
+              <h3 className="honor-title">{a.title}</h3>
               <div className="honor-event">{a.event}</div>
               <div className="honor-detail">{a.detail}</div>
               
               {a.image && (
                 <div style={{ marginTop: '1rem', width: '100%' }}>
-                  <img 
-                    src={a.image} 
-                    alt={`${a.title} Certificate`} 
-                    style={{ 
-                      width: '100%', 
-                      height: 'auto', 
-                      borderRadius: '8px', 
-                      border: '1px solid var(--clr-border)',
-                      boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-                    }} 
-                  />
-                </div>
-              )}
-
-              {a.evidence && (
-                <div style={{ marginTop: '1.25rem' }}>
-                  <a href={a.evidence} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
-                    View Evidence <IconExternal />
+                  <a href={a.image} target="_blank" rel="noopener noreferrer" title="Click to view full image">
+                    <img 
+                      src={a.image} 
+                      alt={`${a.title} Certificate`} 
+                      loading="lazy"
+                      style={{ 
+                        width: '100%', 
+                        height: 'auto', 
+                        borderRadius: '8px', 
+                        border: '1px solid var(--clr-border)',
+                        boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                        cursor: 'pointer'
+                      }} 
+                    />
                   </a>
                 </div>
               )}
+
+              <div style={{ marginTop: '1.25rem', display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+                {a.evidence && (
+                  <a href={a.evidence} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
+                    {a.evidenceText || 'View Evidence'} <IconExternal />
+                  </a>
+                )}
+                {a.verify && (
+                  <a href={a.verify} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
+                    Verify Credential <IconExternal />
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
