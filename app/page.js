@@ -368,8 +368,8 @@ function Hero() {
             </p>
 
             <p className="hero-desc" id="hero-desc">
-              I&apos;m a Computer Science &amp; Engineering Fresh graduate (Major: Data Science) from United International University (UIU) with a strong interest in Software Quality Assurance (SQA) and QA Automation.
-              {' '}I&apos;m building my career as a Junior QA Automation Engineer, focusing on Manual Testing, API Testing, UI Automation with Playwright, and Performance Testing with k6. Alongside testing, I also work on Machine Learning and Web Development, which helps me understand how software is built as well as how it breaks. I enjoy finding bugs, improving software quality, and continuously learning modern tools and practices.
+              I&apos;m a fresh Computer Science &amp; Engineering graduate (Major: Data Science) from United International University (UIU), passionate about Software Quality Assurance and QA Automation.
+              {' '}I&apos;m building my career as a Junior QA Automation Engineer, focusing on Manual Testing, API Testing, UI Automation with Playwright, and Performance Testing with k6. I also work on Machine Learning and Web Development, which helps me understand how software is built as well as how it breaks. I enjoy finding bugs, improving software quality, and learning modern tools and practices.
             </p>
 
             <div className="hero-actions">
