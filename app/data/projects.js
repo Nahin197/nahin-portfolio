@@ -8,6 +8,16 @@ export const PROJECTS = [
   /* ── SQA ── */
   {
     category: 'sqa',
+    icon: '⚡',
+    title: 'API Performance Testing Suite with k6',
+    period: 'Oct 2026',
+    badge: 'Performance Testing',
+    desc: 'End-to-end performance engineering project: built a custom Express.js REST API (e-commerce backend with 1,000 products) as the system under test, then covered 6 test types — Load, Stress, Spike, Endurance, Volume, and Scenario Comparison with named scenarios & custom metrics. Stress test hit 6,870 req/s at 50 VUs with 0% errors. Endurance ran 10 min × 10 VUs with p(95) stable between 1.79–2.16ms — zero degradation. Wrote Python scripts (no pip installs) to parse raw k6 NDJSON and compute per-minute p(95) for drift analysis. Thresholds, env-var parameterisation, and a multi-profile single-file runner via TEST_TYPE.',
+    tags: ['k6', 'Node.js', 'Express.js', 'Python', 'Performance Testing', 'REST API', 'JavaScript'],
+    github: 'https://github.com/Nahin197/k6-api-performance-testing',
+  },
+  {
+    category: 'sqa',
     icon: '🛍️',
     title: 'SauceDemo E2E Automation Testing Suite — Playwright + JavaScript',
     period: 'Sep 2026',
