@@ -149,7 +149,7 @@ const SKILLS = [
   },
 ];
 
-const CV_DRIVE_LINK = 'https://drive.google.com/file/d/10RJ38-L_79-KUd-jlLlSBt4rx6nIr482/view?usp=drive_link';
+const CV_DRIVE_LINK = 'https://drive.google.com/file/d/1pLk9eOmdtj751qS-NNZQijKEof3kAXUJ/view?usp=drive_link';
 const CV_DOWNLOAD_LINK = '/my_cv.pdf';
 
 /* ════════════════════════════════════════
@@ -435,21 +435,30 @@ function About() {
         <div className="about-grid">
           <div className="about-text reveal">
             <p>
-              I&apos;m a Fresh Computer Science and Engineering graduate with hands-on experience
-              in <strong style={{ color: 'var(--clr-violet-light)' }}>Software Testing & QA</strong> through
-              professional training at CDIP, UIU and real-world automation projects.
+              I&apos;m a fresh Computer Science and Engineering graduate with hands-on experience
+              in <strong style={{ color: 'var(--clr-violet-light)' }}>Software Testing &amp; Quality Assurance (QA)</strong> through
+              professional training at CDIP, UIU, and practical automation projects.
             </p>
             <p>
-              My practical experience spans Manual Testing, Functional &amp; Regression Testing,
+              My expertise spans Manual Testing, Functional &amp; Regression Testing,
               System Testing, API Testing, and Web Automation using{' '}
               <strong style={{ color: 'var(--clr-cyan)' }}>Playwright, Selenium, Postman, Newman,</strong>{' '}
-              Jira, and k6. I have worked within SDLC, STLC, and Agile methodologies.
+              Jira, and k6. I have experience applying SDLC, STLC, and Agile methodologies throughout the software testing lifecycle.
             </p>
             <p>
-              Beyond QA, I have a solid foundation in C, C++, Java, Python, PHP, and JavaScript which enables
-              me to understand both frontend and backend systems during testing.
-              Proud to be <strong style={{ color: 'var(--clr-violet-light)' }}>Champion</strong> at UIU CSE Project Show (SAD Lab) and{' '}
-              <strong style={{ color: 'var(--clr-cyan)' }}>2nd Runner-Up</strong> in AOOP.
+              Beyond QA, I have a foundation in <strong style={{ color: 'var(--clr-violet-light)' }}>Web Development</strong> and{' '}
+              <strong style={{ color: 'var(--clr-cyan)' }}>Artificial Intelligence (AI) and Machine Learning (ML)</strong>, with knowledge of
+              Data Analysis, Natural Language Processing (NLP), Computer Vision, Deep Learning, and Machine Learning Model Development.
+            </p>
+            <p>
+              I also have a solid programming foundation in C, C++, Java, and Python, enabling me to understand
+              frontend and backend systems effectively. I&apos;m proud to have been the{' '}
+              <strong style={{ color: 'var(--clr-violet-light)' }}>Champion</strong> at UIU CSE Project Show (SAD Lab) and{' '}
+              <strong style={{ color: 'var(--clr-cyan)' }}>2nd Runner-Up</strong> in AOOP, demonstrating my problem-solving, analytical, and teamwork skills.
+            </p>
+            <p>
+              I&apos;m passionate about continuous learning and eager to contribute my skills in Software Quality Assurance,
+              Web Development, and AI/ML while growing as a technology professional.
             </p>
             <div style={{ marginTop: '1.5rem' }}>
               <a href={CV_DRIVE_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-outline" id="about-view-cv">
