@@ -150,7 +150,7 @@ const SKILLS = [
 ];
 
 const CV_DRIVE_LINK = 'https://drive.google.com/file/d/10RJ38-L_79-KUd-jlLlSBt4rx6nIr482/view?usp=drive_link';
-const CV_DOWNLOAD_LINK = '/Nahin_CV.pdf';
+const CV_DOWNLOAD_LINK = '/my_cv.pdf';
 
 /* ════════════════════════════════════════
    TYPED TEXT HOOK
@@ -292,7 +292,7 @@ function Navbar() {
         </div>
         
         <div className="navbar-actions">
-          <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="btn btn-primary navbar-cta" id="nav-cv-btn">
+          <a href={CV_DOWNLOAD_LINK} download="my_cv.pdf" className="btn btn-primary navbar-cta" id="nav-cv-btn">
             <IconDownload /> Resume
           </a>
           
@@ -374,7 +374,7 @@ function Hero() {
 
             <div className="hero-actions">
               <a href="#projects" className="btn btn-primary" id="hero-view-projects">View Projects</a>
-              <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="btn btn-outline" id="hero-download-cv">
+              <a href={CV_DOWNLOAD_LINK} download="my_cv.pdf" className="btn btn-outline" id="hero-download-cv">
                 <IconDownload /> Download CV
               </a>
             </div>
@@ -905,7 +905,7 @@ function Contact() {
             <a href="https://www.facebook.com/nahin197" target="_blank" rel="noopener noreferrer" className="contact-link" id="contact-facebook"><IconFacebook />Facebook</a>
             <a href="https://wa.me/8801750454515" target="_blank" rel="noopener noreferrer" className="contact-link" id="contact-whatsapp"><IconWhatsApp />WhatsApp</a>
             <a href="mailto:khademulislam.nahin05@gmail.com" className="contact-link" id="contact-email"><IconEmail />Email Me</a>
-            <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="contact-link" id="contact-cv"><IconDownload />Download CV</a>
+            <a href={CV_DOWNLOAD_LINK} download="my_cv.pdf" className="contact-link" id="contact-cv"><IconDownload />Download CV</a>
           </div>
         </div>
       </div>
