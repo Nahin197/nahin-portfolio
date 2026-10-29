@@ -368,9 +368,8 @@ function Hero() {
             </p>
 
             <p className="hero-desc" id="hero-desc">
-              Fresh CSE graduate from United International University with hands-on experience in
-              SQA automation — building reliable, scalable test suites using Playwright, Postman &
-              Newman. Champion at UIU CSE Project Show.
+              I&apos;m a Computer Science &amp; Engineering Fresh graduate (Major: Data Science) from United International University (UIU) with a strong interest in Software Quality Assurance (SQA) and QA Automation.
+              {' '}I&apos;m building my career as a Junior QA Automation Engineer, focusing on Manual Testing, API Testing, UI Automation with Playwright, and Performance Testing with k6. Alongside testing, I also work on Machine Learning and Web Development, which helps me understand how software is built as well as how it breaks. I enjoy finding bugs, improving software quality, and continuously learning modern tools and practices.
             </p>
 
             <div className="hero-actions">
