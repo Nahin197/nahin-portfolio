@@ -653,7 +653,13 @@ function Projects() {
                 <span className={`project-badge project-badge-${p.category}`}>{p.badge}</span>
               </div>
               <h3 className="project-title">{p.title}</h3>
-              <p className="project-desc">{p.desc}</p>
+              {Array.isArray(p.desc) ? (
+                <ul className="project-desc-list">
+                  {p.desc.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+              ) : (
+                <p className="project-desc">{p.desc}</p>
+              )}
               <div className="project-tags">
                 {p.tags.map((t) => <span key={t} className="tech-tag">{t}</span>)}
               </div>

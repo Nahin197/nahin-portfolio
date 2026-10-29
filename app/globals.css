@@ -1317,6 +1317,20 @@ button {
   margin-bottom: 1.25rem;
 }
 
+.project-desc-list {
+  font-size: 0.875rem;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 1.25rem;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.project-desc-list li {
+  margin-bottom: 0.25rem;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
