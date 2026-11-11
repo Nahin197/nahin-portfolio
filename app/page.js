@@ -661,6 +661,10 @@ function CVModal({ onClose }) {
     };
   }, [onClose]);
 
+  // Mobile browsers (iOS/Android) cannot render PDFs inside iframes.
+  // Detect mobile and show a friendly redirect screen instead.
+  const isMobile = typeof window !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
   return (
     <div className="cv-modal-overlay" onClick={onClose} role="dialog" aria-modal="true" aria-label="CV Preview">
       <div className="cv-modal-box" onClick={(e) => e.stopPropagation()}>
@@ -687,21 +691,46 @@ function CVModal({ onClose }) {
             </button>
           </div>
         </div>
-        {/* PDF Viewer */}
+
+        {/* Body: mobile gets a friendly card, desktop gets the iframe */}
         <div className="cv-modal-body">
-          <iframe
-            src={`${CV_DOWNLOAD_LINK}#toolbar=1&navpanes=0&scrollbar=1`}
-            title="CV Preview"
-            className="cv-modal-iframe"
-            loading="lazy"
-          />
-          {/* Fallback for browsers that block iframe PDF rendering */}
-          <div className="cv-modal-fallback">
-            <p>Your browser cannot display the PDF inline.</p>
-            <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="btn btn-primary" style={{ marginTop: '1rem' }}>
-              Download CV Instead
-            </a>
-          </div>
+          {isMobile ? (
+            <div className="cv-mobile-screen">
+              <div className="cv-mobile-icon">📄</div>
+              <h3 className="cv-mobile-title">View My CV</h3>
+              <p className="cv-mobile-desc">PDF preview isn&apos;t available on mobile browsers. Choose an option below:</p>
+              <div className="cv-mobile-actions">
+                <a href={CV_DRIVE_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary cv-mobile-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                  Open in Google Drive
+                </a>
+                <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="btn btn-outline cv-mobile-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  Download PDF
+                </a>
+              </div>
+            </div>
+          ) : (
+            <>
+              <iframe
+                src={`${CV_DOWNLOAD_LINK}#toolbar=1&navpanes=0&scrollbar=1`}
+                title="CV Preview"
+                className="cv-modal-iframe"
+                loading="lazy"
+              />
+              {/* Fallback for browsers that block iframe PDF rendering */}
+              <div className="cv-modal-fallback">
+                <p>Your browser cannot display the PDF inline.</p>
+                <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="btn btn-primary" style={{ marginTop: '1rem' }}>
+                  Download CV Instead
+                </a>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
