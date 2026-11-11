@@ -421,11 +421,75 @@ function Hero() {
 }
 
 /* ════════════════════════════════════════
+   CV MODAL
+════════════════════════════════════════ */
+function CVModal({ onClose }) {
+  // Close on Escape key
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handleKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div className="cv-modal-overlay" onClick={onClose} role="dialog" aria-modal="true" aria-label="CV Preview">
+      <div className="cv-modal-box" onClick={(e) => e.stopPropagation()}>
+        {/* Header */}
+        <div className="cv-modal-header">
+          <span className="cv-modal-title">📄 Md. Khademul Islam Nahin — CV</span>
+          <div className="cv-modal-actions">
+            <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="cv-modal-btn cv-modal-btn-download">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download
+            </a>
+            <a href={CV_DRIVE_LINK} target="_blank" rel="noopener noreferrer" className="cv-modal-btn cv-modal-btn-external">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Open in Drive
+            </a>
+            <button onClick={onClose} className="cv-modal-close" aria-label="Close CV preview">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        {/* PDF Viewer */}
+        <div className="cv-modal-body">
+          <iframe
+            src={`${CV_DOWNLOAD_LINK}#toolbar=1&navpanes=0&scrollbar=1`}
+            title="CV Preview"
+            className="cv-modal-iframe"
+            loading="lazy"
+          />
+          {/* Fallback for browsers that block iframe PDF rendering */}
+          <div className="cv-modal-fallback">
+            <p>Your browser cannot display the PDF inline.</p>
+            <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="btn btn-primary" style={{ marginTop: '1rem' }}>
+              Download CV Instead
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════
    ABOUT
 ════════════════════════════════════════ */
 function About() {
+  const [showCV, setShowCV] = useState(false);
   return (
     <section id="about" className="section">
+      {showCV && <CVModal onClose={() => setShowCV(false)} />}
       <div className="container">
         <div className="section-header reveal">
           <span className="section-tag">About Me</span>
@@ -460,9 +524,16 @@ function About() {
               I&apos;m passionate about continuous learning and eager to contribute my skills in Software Quality Assurance,
               Web Development, and AI/ML while growing as a technology professional.
             </p>
-            <div style={{ marginTop: '1.5rem' }}>
-              <a href={CV_DRIVE_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-outline" id="about-view-cv">
-                <IconExternal /> View Full CV
+            <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <button onClick={() => setShowCV(true)} className="btn btn-primary" id="about-view-cv">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '0.4rem' }}>
+                  <path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/>
+                </svg>
+                View CV
+              </button>
+              <a href={CV_DOWNLOAD_LINK} download="Nahin_CV.pdf" className="btn btn-outline" id="about-download-cv">
+                <IconDownload /> Download CV
               </a>
             </div>
           </div>
