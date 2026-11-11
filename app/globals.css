@@ -265,13 +265,15 @@ button {
   border-radius: 999px;
   border: 1px solid rgba(139, 92, 246, 0.3);
   color: var(--clr-violet-light);
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(139, 92, 246, 0.07);
   transition: all var(--transition-fast);
 }
 
 .tech-tag:hover {
-  background: rgba(139, 92, 246, 0.2);
-  border-color: var(--clr-violet);
+  background: color-mix(in srgb, var(--tag-color, #8b5cf6) 15%, transparent);
+  border-color: var(--tag-color, var(--clr-violet));
+  color: var(--tag-color, var(--clr-violet-light));
+  filter: brightness(1.15);
 }
 
 .tech-tag:hover .tech-tag-icon {
@@ -286,7 +288,7 @@ button {
   width: 13px;
   height: 13px;
   flex-shrink: 0;
-  opacity: 0.7;
+  opacity: 0.85;
   transition: opacity 0.2s, transform 0.2s;
 }
 

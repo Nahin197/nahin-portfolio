@@ -257,13 +257,114 @@ const TECH_ICONS = {
   'JavaScript ES6':    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>,
 };
 
+/* Brand colours for tech-tag icons — mirrors the skill-pill color system */
+const TECH_COLORS = {
+  /* Test Automation */
+  'Playwright':        '#45ba4b',
+  'Selenium':          '#43b02a',
+  'Selenium JS':       '#43b02a',
+  'Postman':           '#ff6c37',
+  'Newman':            '#ff6c37',
+  'k6':                '#7d64ff',
+  'K6':                '#7d64ff',
+  /* API / HTTP */
+  'REST API':          '#61dafb',
+  'REST API Testing':  '#61dafb',
+  'Newman HTMLExtra':  '#ff6c37',
+  'HTMLExtra':         '#e34c26',
+  /* QA / Methodology */
+  'Jira':              '#0052cc',
+  'Agile':             '#00b4d8',
+  'STLC':              '#a78bfa',
+  'SDLC / STLC':       '#a78bfa',
+  'Manual Testing':    '#f59e0b',
+  'API Testing':       '#61dafb',
+  'Database Testing':  '#00758f',
+  'Performance Testing':'#7d64ff',
+  'SQL':               '#00758f',
+  'Test Cases':        '#34d399',
+  'Bug Reporting':     '#f87171',
+  'SQA':               '#a78bfa',
+  /* Programming */
+  'JavaScript':        '#f7df1e',
+  'JavaScript ES6':    '#f7df1e',
+  'JavaScript ES6+':   '#f7df1e',
+  'JavaScript ES Modules': '#f7df1e',
+  'Java':              '#f89820',
+  'Java 17':           '#f89820',
+  'JUnit 5':           '#25a162',
+  'Python':            '#3776ab',
+  'PHP':               '#777bb4',
+  'Python Flask':      '#3776ab',
+  /* Web / Frontend */
+  'Laravel':           '#ff2d20',
+  'HTML5':             '#e34c26',
+  'CSS3':              '#264de4',
+  'Tailwind CSS':      '#38bdf8',
+  'tailwind CSS':      '#38bdf8',
+  'DaisyUI':           '#ff9fd8',
+  'MySQL':             '#00758f',
+  'Node.js':           '#5fa04e',
+  'Node JS':           '#5fa04e',
+  'Express.js':        '#888888',
+  'Express':           '#888888',
+  'Firebase':          '#ffca28',
+  /* ML */
+  'PyTorch':           '#ee4c2c',
+  'Scikit-learn':      '#f7931e',
+  'HuggingFace':       '#ffd21e',
+  'Google Colab':      '#f9ab00',
+  'XGBoost':           '#189ab4',
+  'LightGBM':          '#02b875',
+  'CatBoost':          '#ffcc00',
+  'GraphSAGE':         '#a78bfa',
+  'GATv2':             '#a78bfa',
+  'UMAP':              '#00b4d8',
+  'HDBSCAN':           '#38bdf8',
+  'SacreBLEU':         '#34d399',
+  'NLP':               '#34d399',
+  'CodeCarbon':        '#22c55e',
+  'LaTeX':             '#008080',
+  'YOLO':              '#00aaff',
+  'SAHI':              '#ff6b6b',
+  'IEEE Paper':        '#00629b',
+  'LLaMA':             '#7c3aed',
+  'Spatial Proteomics':'#f472b6',
+  'Bioinformatics':    '#34d399',
+  /* Tools */
+  'Git & GitHub':      '#f05032',
+  'GitHub Actions':    '#2088ff',
+  'VS Code':           '#007acc',
+  'IntelliJ IDEA':     '#fe315d',
+  'Allure':            '#a78bfa',
+  'HTML Reporter':     '#e34c26',
+  /* Desktop / Java */
+  'JavaFX':            '#f89820',
+  'JDBC':              '#00758f',
+  'Maven':             '#c71a36',
+  'Multithreading':    '#f59e0b',
+  'Socket Programming':'#38bdf8',
+  'Socket Programming for chat system': '#38bdf8',
+  /* Security */
+  'Argon2id':          '#10b981',
+  '2FA':               '#06b6d4',
+  'RBAC':              '#8b5cf6',
+  'JWT':               '#d63aff',
+  /* POM */
+  'POM':               '#a78bfa',
+};
+
 /* Reusable TechTag component with optional icon lookup */
 function TechTag({ name, className = 'tech-tag' }) {
   const icon = TECH_ICONS[name];
+  const color = TECH_COLORS[name];
   return (
-    <span className={className}>
+    <span
+      className={className}
+      style={color ? { '--tag-color': color, borderColor: `${color}55`, color: color } : undefined}
+    >
       {icon && (
-        <span className="tech-tag-icon" aria-hidden="true">{icon}</span>
+        <span className="tech-tag-icon" aria-hidden="true" style={color ? { color } : undefined}>{icon}</span>
       )}
       {name}
     </span>
