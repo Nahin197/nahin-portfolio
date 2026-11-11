@@ -341,7 +341,7 @@ function Navbar() {
 /* ════════════════════════════════════════
    HERO
 ════════════════════════════════════════ */
-function Hero() {
+function Hero({ onOpenCV }) {
   const typed = useTyped(TYPED_STRINGS, 55, 2000);
 
   return (
@@ -374,6 +374,13 @@ function Hero() {
 
             <div className="hero-actions">
               <a href="#projects" className="btn btn-primary" id="hero-view-projects">View Projects</a>
+              <button onClick={onOpenCV} className="btn btn-outline" id="hero-view-cv">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '0.4rem' }}>
+                  <path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/>
+                </svg>
+                View CV
+              </button>
               <a href={CV_DOWNLOAD_LINK} download="my_cv.pdf" className="btn btn-outline" id="hero-download-cv">
                 <IconDownload /> Download CV
               </a>
@@ -485,11 +492,9 @@ function CVModal({ onClose }) {
 /* ════════════════════════════════════════
    ABOUT
 ════════════════════════════════════════ */
-function About() {
-  const [showCV, setShowCV] = useState(false);
+function About({ onOpenCV }) {
   return (
     <section id="about" className="section">
-      {showCV && <CVModal onClose={() => setShowCV(false)} />}
       <div className="container">
         <div className="section-header reveal">
           <span className="section-tag">About Me</span>
@@ -525,7 +530,7 @@ function About() {
               Web Development, and AI/ML while growing as a technology professional.
             </p>
             <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <button onClick={() => setShowCV(true)} className="btn btn-primary" id="about-view-cv">
+              <button onClick={onOpenCV} className="btn btn-primary" id="about-view-cv">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '0.4rem' }}>
                   <path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/>
                   <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/>
@@ -1017,12 +1022,16 @@ function Footer() {
 ════════════════════════════════════════ */
 export default function Page() {
   useScrollReveal();
+  const [showCV, setShowCV] = useState(false);
+  const openCV = () => setShowCV(true);
+  const closeCV = () => setShowCV(false);
   return (
     <>
+      {showCV && <CVModal onClose={closeCV} />}
       <Navbar />
       <main>
-        <Hero />
-        <About />
+        <Hero onOpenCV={openCV} />
+        <About onOpenCV={openCV} />
         <Skills />
         <Experience />
         <Projects />
