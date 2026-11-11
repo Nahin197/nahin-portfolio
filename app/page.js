@@ -1098,6 +1098,26 @@ function Education() {
             </div>
           </div>
         </div>
+
+        <div className="glass-card education-card reveal" style={{ marginTop: '1.25rem' }}>
+          <div className="edu-icon">🏫</div>
+          <div>
+            <div className="edu-degree">Higher Secondary Certificate (HSC)</div>
+            <div className="edu-uni">Thakurgaon Govt. College</div>
+            <div className="edu-period">2018 – 2020 · Thakurgaon, Bangladesh</div>
+            <div className="edu-gpa"><span>⭐ GPA</span><strong>5.0 / 5.0</strong></div>
+          </div>
+        </div>
+
+        <div className="glass-card education-card reveal" style={{ marginTop: '1.25rem' }}>
+          <div className="edu-icon">🏫</div>
+          <div>
+            <div className="edu-degree">Secondary School Certificate (SSC)</div>
+            <div className="edu-uni">Thahurgaon Sugar Mills High School</div>
+            <div className="edu-period">– 2018 · Thakurgaon, Bangladesh</div>
+            <div className="edu-gpa"><span>⭐ GPA</span><strong>5.0 / 5.0</strong></div>
+          </div>
+        </div>
       </div>
     </section>
   );
