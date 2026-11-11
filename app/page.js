@@ -688,10 +688,12 @@ function CVModal({ onClose }) {
             </button>
           </div>
         </div>
-        {/* Google Drive embed — works on all devices including mobile */}
+        {/* CV viewer — Google Drive embed on mobile, local PDF on desktop */}
         <div className="cv-modal-body">
           <iframe
-            src={CV_DRIVE_EMBED}
+            src={typeof window !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+              ? CV_DRIVE_EMBED
+              : `${CV_DOWNLOAD_LINK}#toolbar=1&navpanes=0&scrollbar=1`}
             title="CV Preview"
             className="cv-modal-iframe"
             allow="autoplay"
