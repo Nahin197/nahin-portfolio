@@ -651,6 +651,20 @@ function Hero({ onOpenCV }) {
    CV MODAL
 ════════════════════════════════════════ */
 function CVModal({ onClose }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile device or narrow mobile viewport so mobile uses Google Drive embed
+  // while desktop keeps the local PDF iframe.
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobileUA = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      setIsMobile(mobileUA || window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Close on Escape key
   useEffect(() => {
     const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -661,6 +675,10 @@ function CVModal({ onClose }) {
       document.body.style.overflow = '';
     };
   }, [onClose]);
+
+  const viewerSrc = isMobile
+    ? CV_DRIVE_EMBED
+    : `${CV_DOWNLOAD_LINK}#toolbar=1&navpanes=0&scrollbar=1`;
 
   return (
     <div className="cv-modal-overlay" onClick={onClose} role="dialog" aria-modal="true" aria-label="CV Preview">
@@ -691,9 +709,8 @@ function CVModal({ onClose }) {
         {/* CV viewer — Google Drive embed on mobile, local PDF on desktop */}
         <div className="cv-modal-body">
           <iframe
-            src={typeof window !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-              ? CV_DRIVE_EMBED
-              : `${CV_DOWNLOAD_LINK}#toolbar=1&navpanes=0&scrollbar=1`}
+            key={viewerSrc}
+            src={viewerSrc}
             title="CV Preview"
             className="cv-modal-iframe"
             allow="autoplay"
