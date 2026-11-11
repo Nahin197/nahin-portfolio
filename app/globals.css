@@ -834,10 +834,10 @@ button {
 .skill-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   font-size: 0.72rem;
   font-weight: 600;
-  padding: 0.28rem 0.65rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.5rem;
   border-radius: 999px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
@@ -850,6 +850,28 @@ button {
   background: rgba(255,255,255,0.1);
   border-color: var(--pill-color, #8b5cf6);
   color: var(--clr-text);
+}
+
+.skill-pill:hover .skill-pill-icon {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.skill-pill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.skill-pill-icon svg {
+  width: 14px;
+  height: 14px;
+  display: block;
 }
 
 .skill-pill-dot {
