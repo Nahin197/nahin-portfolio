@@ -628,7 +628,7 @@ function Hero({ onOpenCV }) {
             <div className="hero-photo-ring hero-photo-ring-2" aria-hidden="true" />
             <div className="hero-photo-container">
               <Image
-                src="/nahin.jpg"
+                src="/profile-photo.jpg"
                 alt="Md. Khademul Islam Nahin"
                 fill
                 className="hero-photo-img"
