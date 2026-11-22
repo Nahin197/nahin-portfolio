@@ -224,6 +224,24 @@ export const PROJECTS = [
   /* ── Web Development ── */
   {
     category: 'web',
+    icon: '💰',
+    title: 'SpendWise — Personal Expense & Finance Tracker',
+    period: 'Nov 2026',
+    badge: 'Full-Stack (Next.js)',
+    preview: '/spendwise-preview.png',
+    desc: [
+      'Full-stack personal finance web app: track daily income & expenses, manage monthly budgets with 3-tier warning indicators (<80% Normal, 80–99% Warning, ≥100% Exceeded), and monitor savings goals with deposit milestones.',
+      'Live dashboard with Recharts visualizations: Annual Income vs Expense bar chart, Net Savings trendline, and Expense Category pie chart with percentage breakdown.',
+      'Financial Reports module: Annual KPIs (Total Income, Total Outflow, Net Savings, Avg Monthly Spending, Top Expense Category) and transaction CSV export with date-range & type filtering.',
+      'Secure authentication: bcryptjs password hashing, cryptographically signed JWT sessions via jose in HTTP-only cookies, Edge Middleware route protection, and 16 default seeded categories.',
+      'Automated testing: 17-endpoint REST API smoke test suite + Playwright E2E tests for login, registration, dashboard rendering, and mobile responsive views.',
+    ],
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'PostgreSQL', 'Prisma', 'JWT', 'Playwright', 'Vercel'],
+    github: 'https://github.com/Nahin197/myExpense',
+    live: 'https://spendwise197.vercel.app',
+  },
+  {
+    category: 'web',
     icon: '🚀',
     title: 'CholoSave (Enhanced Version) — Advanced Collaborative Savings Platform',
     period: 'Aug 2025',
