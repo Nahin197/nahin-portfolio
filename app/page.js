@@ -1161,9 +1161,38 @@ function Education() {
 }
 
 /* ════════════════════════════════════════
+   CERT LIGHTBOX
+════════════════════════════════════════ */
+function CertLightbox({ src, alt, onClose }) {
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handleKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div className="cert-lightbox-overlay" onClick={onClose} role="dialog" aria-modal="true" aria-label={alt}>
+      <div className="cert-lightbox-box" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="cert-lightbox-close" aria-label="Close image">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <img src={src} alt={alt} className="cert-lightbox-img" />
+      </div>
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════
    HONORS
 ════════════════════════════════════════ */
 function Honors() {
+  const [lightbox, setLightbox] = useState(null);
   const awards = [
     { 
       emoji: '📜', 
@@ -1196,6 +1225,7 @@ function Honors() {
   ];
   return (
     <section id="certifications" className="section">
+      {lightbox && <CertLightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
       <div id="honors" style={{ position: 'relative', top: '-80px' }} />
       <div className="container">
         <div className="section-header reveal">
@@ -1213,21 +1243,20 @@ function Honors() {
               
               {a.image && (
                 <div style={{ marginTop: '1rem', width: '100%' }}>
-                  <a href={a.image} target="_blank" rel="noopener noreferrer" title="Click to view full image">
-                    <img 
-                      src={a.image} 
-                      alt={`${a.title} Certificate`} 
-                      loading="lazy"
-                      style={{ 
-                        width: '100%', 
-                        height: 'auto', 
-                        borderRadius: '8px', 
-                        border: '1px solid var(--clr-border)',
-                        boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-                        cursor: 'pointer'
-                      }} 
-                    />
-                  </a>
+                  <img
+                    src={a.image}
+                    alt={`${a.title} Certificate`}
+                    loading="lazy"
+                    onClick={() => setLightbox({ src: a.image, alt: `${a.title} Certificate` })}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      borderRadius: '8px',
+                      border: '1px solid var(--clr-border)',
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                      cursor: 'zoom-in'
+                    }}
+                  />
                 </div>
               )}
 
