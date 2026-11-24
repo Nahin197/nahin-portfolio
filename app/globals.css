@@ -1361,16 +1361,14 @@ button {
   font-size: 0.875rem;
   color: var(--clr-text-muted);
   line-height: 1.7;
-  flex: 1;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .project-desc-list {
   font-size: 0.875rem;
   color: var(--clr-text-muted);
   line-height: 1.7;
-  flex: 1;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   padding-left: 1.1rem;
   list-style: disc;
 }
@@ -2045,3 +2043,4 @@ button {
     height: 180px;
   }
 }
+
