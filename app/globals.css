@@ -1149,7 +1149,6 @@ button {
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 /* Cards animate in on every tab switch (driven by key={activeTab} remount) */
@@ -1381,7 +1380,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-top: auto;
+  margin-top: 1rem;
 }
 
 /* ─── Project Preview Image ─── */
